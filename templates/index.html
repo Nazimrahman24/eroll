@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter EROLL Pdf to Excel Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="light">
+    <header class="header">
+        <div class="left-header">
+            <h1>Voter EROLL Pdf to Excel Converter</h1>
+        </div>
+        <div class="right-header">
+            <button id="themeToggle">🌙</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Usage Instructions -->
+        <section class="instructions">
+            <p><strong>Usage Instructions:</strong></p>
+            <ul>
+                <li>Upload only <strong>Hindi voter list PDF</strong> files.</li>
+                <li>File size must be less than <strong>50MB</strong>.</li>
+                <li>Clear quality PDF files provide better results.</li>
+                <li>Extracted data will be downloaded in <strong>Excel (.xlsx)</strong> format.</li>
+                <li class="red-text">Processing can take up to 5-8 min</li>
+                <li class="red-text">Don’t close this window</li>
+            </ul>
+        </section>
+
+        <!-- Upload Area -->
+        <div id="uploadArea" class="upload-area">
+            <p class="upload-text">Click or Drag & Drop PDF here</p>
+            <input type="file" id="fileInput" accept=".pdf" hidden>
+        </div>
+
+        <!-- File Info -->
+        <div id="fileInfo">
+            <span>File Name: <span id="fileName"></span></span>
+            <span>Size: <span id="fileSize"></span></span>
+        </div>
+
+        <!-- Status -->
+        <div id="statusMessage"></div>
+
+        <!-- Convert Button -->
+        <button id="convertBtn" disabled>Convert to Excel</button>
+
+        <!-- Download Result -->
+        <div id="resultsSection" style="display:none;">
+            <a id="downloadBtn" href="#"> Download Excel </a>
+        </div>
+
+        <!-- Error -->
+        <div id="errorSection">
+            <span id="errorMessage"></span>
+        </div>
+
+        <!-- Floating Support Me Button -->
+        <a href="https://buymeacoffee.com/rock4754" class="support-btn" target="_blank">☕ Support Me</a>
+    </main>
+
+    <footer class="footer">
+        © 2025 Nazim Rahman. All rights reserved.
+    </footer>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
